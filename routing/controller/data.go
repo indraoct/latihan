@@ -31,6 +31,8 @@ func GetDataHandler(db *sql.DB, w http.ResponseWriter, r *http.Request) {
 			arr_bahasa = append(arr_bahasa, bahasa)
 		}
 
+		rows.Scan(&arr_bahasa)
+
 		output.Status = 1
 		output.Message = "Success"
 		output.Data = arr_bahasa
